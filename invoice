@@ -1,0 +1,29 @@
+$('#xMoney').parent().append('<input style="background: #84c68f;" id="Lenhnaptien" placeholder="Nhập lệnh nạp tiền" class="form-control" type="text">');
+
+$('#Lenhnaptien').on('change', function(){
+	let str = $('#Lenhnaptien').val().trim();
+	
+	let arr = str.split(',');
+	let nhamang = arr[0];
+	let boiso = arr[1];
+	let thuebao = arr[2];
+	let matkhau = arr[3];
+	let sotien = arr[4];
+	
+	setTimeout(function() {
+		$('#Network').val(nhamang).trigger('change');
+		setTimeout(function() {
+			$('#AcceptMoney').val(boiso).trigger('change');
+			setTimeout(function() {
+				$('#Username').val(thuebao).trigger('input');
+				setTimeout(function() {
+					$('#Password').val(matkhau).trigger('input');
+					setTimeout(function() {
+						$('#Money').val(sotien).trigger('input');
+					}, 200);
+				}, 200);
+			}, 200);
+		}, 200);
+	}, 200);
+});
+
